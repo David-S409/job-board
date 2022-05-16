@@ -66,8 +66,26 @@ class Employee extends User
         }
     }
 
+    function getEmployeeID()
+    {
+        $this->table_name = "Employee";
+        $query = "SELECT * FROM " . $this->table_name . "WHERE UserID = " . $this->id;
+        $stmt = $this->conn->prepare($query);
+        $num = $stmt->rowCount();
+
+        if ($num > 0) {
+
+            // get record details / values
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            // assign values to object properties
+            $this->employeeId = $row['EmployeeID'];
+            return true;
+        }
+    }
+
     function getAllPosts()
     {
+        $this->getEmployeeID();
         $this->table_name = "JobPosts";
         $query = "SELECT * FROM " . $this->table_name;
 
@@ -102,8 +120,9 @@ class Employee extends User
 
     function getSavedPosts()
     {
+        $this->getEmployeeID();
         $this->table_name = "JobPosts";
-        $query = "SELECT JobPosts.JobPostID, EducationID, AddressID, ExpReqID, SalaryID, JobPostTitle, JobDescription, Responsibilities, Qualifications, DatePosted, Deadline, ContactDetails FROM JobPosts JOIN SavedPosts ON JobPosts.JobPostID = SavedPosts.JobPostID WHERE EmployeeID = " . $this->id;
+        $query = "SELECT JobPosts.JobPostID, EducationID, AddressID, ExpReqID, SalaryID, JobPostTitle, JobDescription, Responsibilities, Qualifications, DatePosted, Deadline, ContactDetails FROM JobPosts JOIN SavedPosts ON JobPosts.JobPostID = SavedPosts.JobPostID WHERE EmployeeID = " . $this->employeeID;
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         $posts = $stmt->fetchAll();
@@ -132,8 +151,10 @@ class Employee extends User
     }
     function getAppliedPosts()
     {
+        $this->getEmployeeID();
+        var_dump($this->employeeID);
         $this->table_name = "JobPosts";
-        $query = "SELECT JobPosts.JobPostID, EducationID, AddressID, ExpReqID, SalaryID, JobPostTitle, JobDescription, Responsibilities, Qualifications, DatePosted, Deadline, ContactDetails FROM JobPosts JOIN AppliedPosts ON JobPosts.JobPostID = SavedPosts.JobPostID WHERE EmployeeID = " . $this->id;
+        $query = "SELECT JobPosts.JobPostID, EducationID, AddressID, ExpReqID, SalaryID, JobPostTitle, JobDescription, Responsibilities, Qualifications, DatePosted, Deadline, ContactDetails FROM JobPosts JOIN AppliedPosts ON JobPosts.JobPostID = AppliedPosts.JobPostID WHERE EmployeeID = " . $this->employeeID;
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         $posts = $stmt->fetchAll();

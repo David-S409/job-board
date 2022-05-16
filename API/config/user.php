@@ -66,6 +66,8 @@ class User
             return false;
         }
         if ($stmt->execute()) {
+            $this->id = $this->conn->lastInsertId();
+
             return true;
         }
         echo "\nPDO::errorInfo():\n";

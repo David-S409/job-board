@@ -106,10 +106,6 @@ switch ($type) {
         }
 
         break;
-    case 'post':
-        echo $_GET['id'];
-        echo "post";
-        break;
 
     default:
         http_response_code(400);
