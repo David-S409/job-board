@@ -6,17 +6,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Create User: /api/create_user.php
 -Requirements:
- "fName" : "Doe",
- "lName" : “Santana”,
- "email" : "Doe@santana.com",
- "password" : "555",
- "phone": "1234567",
- "isEmployer": false
+ "fName" : ,
+ "lName" : ,
+ "email" : ,
+ "password" : ,
+ "phone": ,
+ "isEmployer": 
 
 ## Login: /api/login.php
 -Requirements:
- “email" : "doe@santana.com",
- "password" : "555"
+ “email" : ,
+ "password" : 
 
 ## Add Employer Info: /api/employerInfo.php
 -Requirements:
