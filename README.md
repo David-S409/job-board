@@ -20,49 +20,49 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Add Employer Info: /api/employerInfo.php
 -Requirements:
-   "userId": 1,
-    "companyName": "David Co",
-    "companyPhone": "1233212343",
-    "companyEmail": "david@santanaco.com",
-    "hiringRoleId": 1,
-    "streetAddress": "123 S Sesame St",
-    "state": "CA",
-    "zipCode": 92376
+   "userId": ,
+    "companyName": ,
+    "companyPhone": ,
+    "companyEmail": ,
+    "hiringRoleId": ,
+    "streetAddress": ,
+    "state": ,
+    "zipCode": 
 
 ## Add Employee Info: /api/employeeInfo.php
 -Requirements:
-"jwt”:”[JWT HERE]“,
- "eduLevel": 2
+"jwt”: ,
+ "eduLevel": 
 
 ## Post Job: /api/postJob.php:
 -Requirements:
-"jwt”:”[JWT HERE]“,
-"desc":"Charge people at register",
-"title":"Cashier",
-"qualifications": "Must be able to count money",
-"responsibilities": "Count Money, Read, Talk",
-"education": 1,
-"type":1,
-"experience":1,
-"salary":1,
-"benefits":[1,2,3,4,5,6],
-"endDate": "5/15/2022"
+"jwt”: ,
+"desc": ,
+"title": ,
+"qualifications": ,
+"responsibilities": ,
+"education": ,
+"type": ,
+"experience": ,
+"salary": ,
+"benefits": ,
+"endDate": 
 
 ## Get Jobs Postings: /api/getPosts.php/all, /api/getPosts.php/user?type=[applied, saved], /api/getPosts.php/employer
 -Requirements: 
- "jwt”:”[JWT HERE]“,
+ "jwt”: ,
 
 ## Update Post Status: /api/update.php
 -Requirements:
- "jwt”:”[JWT HERE]“,
-    "status": 2,
-    "postId":1,
-    "employeeId":1
+ "jwt”: ,
+    "status": ,
+    "postId": ,
+    "employeeId":
 
 ## Apply to Post: /api/apply.php
 -Requirements:
- "jwt”:”[JWT HERE]“,
-    "postID": 1
+ "jwt”: ,
+    "postID": 
 
 
 
